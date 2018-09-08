@@ -13,9 +13,10 @@ spring:
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
-    url: jdbc:mysql://192.168.0.210:3306/erp_db_test              # 数据库名称
+    url: jdbc:mysql://${erp.ip.${erp_env}}:3306/erp_db_test              # 数据库名称
     username: root
-    password: yg67120088c
+    password: 123456
+    #password: yg67120088c
     dbcp2:
       min-idle: 5                                           # 数据库连接池的最小维持连接数
       initial-size: 5                                       # 初始化连接数
@@ -33,7 +34,7 @@ eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
       #defaultZone: http://eureka7081.com:7081/eureka
-      defaultZone: http://192.168.0.46:7081/eureka
+      defaultZone: http://${erp.ip.${erp_env}}:7081/eureka
 
   instance:
     instance-id: erp-provider-8001
