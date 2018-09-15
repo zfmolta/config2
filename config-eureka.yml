@@ -15,7 +15,7 @@ spring:
 eureka:
   instance:
      #hostname: eureka7001.com
-     hostname: 192.168.0.3
+     hostname: ${erp.ip.${erp_env}}
   client:
     register-with-eureka: false
     fetch-registry: false
